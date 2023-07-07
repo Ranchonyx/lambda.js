@@ -1,0 +1,318 @@
+{
+  "type": "prog",
+  "prog": [
+    {
+      "type": "assign",
+      "operator": "=",
+      "left": {
+        "type": "var",
+        "value": "with-return"
+      },
+      "right": {
+        "type": "lambda",
+        "name": null,
+        "vars": [
+          "f"
+        ],
+        "body": {
+          "type": "lambda",
+          "name": null,
+          "vars": [],
+          "body": {
+            "type": "call",
+            "func": {
+              "type": "var",
+              "value": "cwcc"
+            },
+            "args": [
+              {
+                "type": "var",
+                "value": "f"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "assign",
+      "operator": "=",
+      "left": {
+        "type": "var",
+        "value": "printFileContent"
+      },
+      "right": {
+        "type": "lambda",
+        "name": null,
+        "vars": [
+          "path"
+        ],
+        "body": {
+          "type": "call",
+          "func": {
+            "type": "var",
+            "value": "fread"
+          },
+          "args": [
+            {
+              "type": "var",
+              "value": "path"
+            },
+            {
+              "type": "call",
+              "func": {
+                "type": "var",
+                "value": "println"
+              },
+              "args": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "assign",
+      "operator": "=",
+      "left": {
+        "type": "var",
+        "value": "foo"
+      },
+      "right": {
+        "type": "call",
+        "func": {
+          "type": "var",
+          "value": "with-return"
+        },
+        "args": [
+          {
+            "type": "lambda",
+            "name": null,
+            "vars": [
+              "return"
+            ],
+            "body": {
+              "type": "prog",
+              "prog": [
+                {
+                  "type": "call",
+                  "func": {
+                    "type": "var",
+                    "value": "printf"
+                  },
+                  "args": [
+                    {
+                      "type": "str",
+                      "value": "foo"
+                    }
+                  ]
+                },
+                {
+                  "type": "call",
+                  "func": {
+                    "type": "var",
+                    "value": "return"
+                  },
+                  "args": [
+                    {
+                      "type": "binary",
+                      "operator": "+",
+                      "left": {
+                        "type": "num",
+                        "value": 1
+                      },
+                      "right": {
+                        "type": "num",
+                        "value": 1
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "call",
+                  "func": {
+                    "type": "var",
+                    "value": "printf"
+                  },
+                  "args": [
+                    {
+                      "type": "str",
+                      "value": "bar"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "call",
+      "func": {
+        "type": "var",
+        "value": "printf"
+      },
+      "args": [
+        {
+          "type": "str",
+          "value": "%d"
+        },
+        {
+          "type": "call",
+          "func": {
+            "type": "var",
+            "value": "randFloat"
+          },
+          "args": []
+        }
+      ]
+    },
+    {
+      "type": "call",
+      "func": {
+        "type": "var",
+        "value": "printf"
+      },
+      "args": [
+        {
+          "type": "str",
+          "value": "%d"
+        },
+        {
+          "type": "call",
+          "func": {
+            "type": "var",
+            "value": "randFloat"
+          },
+          "args": []
+        }
+      ]
+    },
+    {
+      "type": "call",
+      "func": {
+        "type": "var",
+        "value": "printf"
+      },
+      "args": [
+        {
+          "type": "str",
+          "value": "%d"
+        },
+        {
+          "type": "call",
+          "func": {
+            "type": "var",
+            "value": "randFloat"
+          },
+          "args": []
+        }
+      ]
+    },
+    {
+      "type": "call",
+      "func": {
+        "type": "var",
+        "value": "printf"
+      },
+      "args": [
+        {
+          "type": "str",
+          "value": "%d"
+        },
+        {
+          "type": "call",
+          "func": {
+            "type": "var",
+            "value": "randFloat"
+          },
+          "args": []
+        }
+      ]
+    },
+    {
+      "type": "call",
+      "func": {
+        "type": "var",
+        "value": "printf"
+      },
+      "args": [
+        {
+          "type": "str",
+          "value": "%d"
+        },
+        {
+          "type": "call",
+          "func": {
+            "type": "var",
+            "value": "randFloat"
+          },
+          "args": []
+        }
+      ]
+    },
+    {
+      "type": "call",
+      "func": {
+        "type": "var",
+        "value": "printf"
+      },
+      "args": [
+        {
+          "type": "str",
+          "value": "%d"
+        },
+        {
+          "type": "call",
+          "func": {
+            "type": "var",
+            "value": "randFloat"
+          },
+          "args": []
+        }
+      ]
+    },
+    {
+      "type": "call",
+      "func": {
+        "type": "var",
+        "value": "printf"
+      },
+      "args": [
+        {
+          "type": "str",
+          "value": "%d"
+        },
+        {
+          "type": "call",
+          "func": {
+            "type": "var",
+            "value": "randFloat"
+          },
+          "args": []
+        }
+      ]
+    },
+    {
+      "type": "call",
+      "func": {
+        "type": "var",
+        "value": "printf"
+      },
+      "args": [
+        {
+          "type": "str",
+          "value": "%d"
+        },
+        {
+          "type": "call",
+          "func": {
+            "type": "var",
+            "value": "randFloat"
+          },
+          "args": []
+        }
+      ]
+    }
+  ]
+}

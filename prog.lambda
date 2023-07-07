@@ -1,0 +1,20 @@
+#!inc "stdlib.lambda"
+
+printFileContent = lambda(path) {
+  fread(path, println());
+};
+
+foo = with-return( lambda(return) {
+  printf("foo");
+  return(1+1);
+  printf("bar");
+});
+
+printf("%d", randFloat());
+printf("%d", randFloat());
+printf("%d", randFloat());
+printf("%d", randFloat());
+printf("%d", randFloat());
+printf("%d", randFloat());
+printf("%d", randFloat());
+printf("%d", randFloat());
