@@ -1,20 +1,66 @@
 #!inc "stdlib.lambda"
 
-printFileContent = lambda(path) {
-  fread(path, println());
+mom = lambda(source, dest) {
+    fwrite(dest, fread(source));
+};
+mam = λ(source, dest) {
+    mom(source, dest);
 };
 
-foo = with-return( lambda(return) {
-  printf("foo");
-  return(1+1);
-  printf("bar");
-});
+mem = λ(source, dest) {  
+    mam(source, dest);
+};
 
-printf("%d", randFloat());
-printf("%d", randFloat());
-printf("%d", randFloat());
-printf("%d", randFloat());
-printf("%d", randFloat());
-printf("%d", randFloat());
-printf("%d", randFloat());
-printf("%d", randFloat());
+mom = lambda(source, dest) {
+    fwrite(dest, fread(source));
+};
+mam = λ(source, dest) {
+    mom(source, dest);
+};
+
+mem = λ(source, dest) {  
+    mam(source, dest);
+};
+mom = lambda(source, dest) {
+    fwrite(dest, fread(source));
+};
+mam = λ(source, dest) {
+    mom(source, dest);
+};
+
+mem = λ(source, dest) {  
+    mam(source, dest);
+};
+mom = lambda(source, dest) {
+    fwrite(dest, fread(source));
+};
+mam = λ(source, dest) {
+    mom(source, dest);
+};
+
+mem = λ(source, dest) {  
+    mam(source, dest);
+};
+mom = lambda(source, dest) {
+    fwrite(dest, fread(source));
+};
+mam = λ(source, dest) {
+    mom(source, dest);
+};
+
+mem = λ(source, dest) {  
+    mam(source, dest);
+};
+mom = lambda(source, dest) {
+    fwrite(dest, fread(source));
+};
+mam = λ(source, dest) {
+    mom(source, dest);
+};
+
+mem = λ(source, dest) {  
+    mam(source, dest);
+};
+
+mem("README.md", "oof.md");
+eval("1+2");

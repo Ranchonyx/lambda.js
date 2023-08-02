@@ -1,9 +1,13 @@
 import Environment from "./Environment.js";
 import * as readline from "node:readline"
 
-import { Execute } from "./Evaluator.js";
-import { writeFile } from "fs";
-import { readFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs";
+import { Execute, evaluate_continuation_passing } from "./Evaluator.js";
+
+import parse from "./Parser.js";
+import InputStream from "./InputStream.js";
+import TokenStream from "./TokenStream.js";
+import Preprocess from "./Preprocessor.js";
 
 
 export default (() => {
@@ -63,6 +67,7 @@ export default (() => {
     lambda_env.def("randFloat", (k) => {
         k(Math.random());
     });
+
     lambda_env.def("randInt", (k) => {
         k(Math.floor(Math.random()))
     })
@@ -73,14 +78,17 @@ export default (() => {
         }, ms);
     });
 
-    lambda_env.def("fread", (k, filename) => {
-        readFile(filename, (err, data) => {
+    lambda_env.def("fread", (k, filename, encoding) => {
+        if (typeof encoding !== "string") encoding = "utf8"
+        readFile(filename, encoding, (err, data) => {
+            if (err) throw err;
             Execute(100, k, [data]);
         });
     });
 
     lambda_env.def("fwrite", (k, filename, data) => {
         writeFile(filename, data, (err) => {
+            if (err) throw err;
             Execute(100, k, [false]);
         });
     });
@@ -96,6 +104,23 @@ export default (() => {
             k(ret);
         })
     });
+
+    lambda_env.def("eval", (k, contents) => {
+        console.log(contents);
+        const AST = parse(
+            TokenStream(
+                InputStream(
+                    Preprocess(
+                        contents
+                    )
+                )
+            )
+        )
+
+        Execute(100, evaluate_continuation_passing, [AST, lambda_env, (result) => {
+            k(result)
+        }]);
+    })
 
     return lambda_env;
 })();
